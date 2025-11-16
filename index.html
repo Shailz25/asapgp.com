@@ -3,63 +3,229 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ASAP GP</title>
+  <meta name="description" content="ASAP Growth Partners - Garment Business Consultancy for fashion startups, manufacturers & e-commerce brands." />
+  <title>ASAP Growth Partners | Garment Business Consultancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
+    :root {
+      --primary: #6d28d9;
+      --primary-light: #a78bfa;
+      --secondary: #1e293b;
+      --text: #334155;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --success: #10b981;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 20px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      line-height: 1.7;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0; width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     }
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
     }
-    p {
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
+    .logo {
+      font-weight: 700; font-size: 1.6rem; color: var(--primary); text-decoration: none;
+    }
+    .nav-links a {
+      margin-left: 2rem; text-decoration: none; color: var(--secondary); font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white; text-align: center; padding: 2rem;
+    }
+    .hero h1 {
+      font-size: 3.2rem; margin-bottom: 1rem; font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.9;
     }
     .btn {
-      display: inline-block;
-      padding: 14px 36px;
-      background: #fff;
-      color: #667eea;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
+      display: inline-block; padding: 14px 32px; margin: 0 10px;
+      background: white; color: var(--primary); border-radius: 50px;
+      font-weight: 600; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s;
     }
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
+    .btn-secondary {
+      background: transparent; color: white; border: 2px solid white;
+    }
+    .btn-secondary:hover {
+      background: white; color: var(--primary);
+    }
+
+    /* Services */
+    .services { padding: 5rem 2rem; background: var(--light); }
+    .section-title {
+      text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--secondary);
+    }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem; max-width: 1200px; margin: 0 auto;
+    }
+    .service-card {
+      background: white; padding: 2rem; border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06); text-align: center;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-8px); }
+    .service-icon {
+      font-size: 2.8rem; margin-bottom: 1rem; color: var(--primary);
+    }
+
+    /* Why Us */
+    .why-us { padding: 5rem 2rem; }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem; max-width: 1000px; margin: 3rem auto 0;
+    }
+    .why-item {
+      text-align: center;
+    }
+    .why-item i {
+      font-size: 2.5rem; color: var(--success); margin-bottom: 1rem;
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--secondary); color: white; text-align: center; padding: 4rem 2rem;
+    }
+    .cta h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .cta p { max-width: 600px; margin: 0 auto 2rem; opacity: 0.9; }
+
+    /* Footer */
     footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      opacity: 0.7;
+      background: #0f172a; color: #cbd5e1; text-align: center; padding: 2rem;
+    }
+    .footer-links a {
+      color: #94a3b8; margin: 0 1rem; text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.5rem; }
+      .btn { display: block; margin: 10px auto; max-width: 220px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to ASAPGP.com</h1>
-    <p>Your professional website is now LIVE! 🚀</p>
-    <a href="#" class="btn">Get Started</a>
-    <footer>© 2025 ASAP GP. All rights reserved.</footer>
-  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">ASAP GP</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Launch & Scale Your Garment Brand</h1>
+      <p>End-to-end consultancy for fashion startups, manufacturers & e-commerce brands. From tech packs to market entry — we make it happen.</p>
+      <a href="contact.html" class="btn">Get Free Consultation</a>
+      <a href="services.html" class="btn btn-secondary">View Services</a>
+    </div>
+  </section>
+
+  <!-- Services Snapshot -->
+  <section class="services">
+    <h2 class="section-title">Our Core Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Business Strategy</h3>
+        <p>Market analysis, feasibility, brand positioning</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✂️</div>
+        <h3>Product Development</h3>
+        <p>Tech packs, sampling, vendor sourcing</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏭</div>
+        <h3>Production Optimization</h3>
+        <p>Cost control, quality systems, workflow</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>Branding & Sales</h3>
+        <p>Digital marketing, B2B/B2C, e-commerce setup</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-us">
+    <h2 class="section-title">Why Partner with ASAP GP?</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <i class="fas fa-industry"></i>
+        <h4>Field-Proven Expertise</h4>
+        <p>Real factory & market experience</p>
+      </div>
+      <div class="why-item">
+        <i class="fas fa-users"></i>
+        <h4>Vetted Vendor Network</h4>
+        <p>Trusted factories & suppliers</p>
+      </div>
+      <div class="why-item">
+        <i class="fas fa-check-circle"></i>
+        <h4>Actionable Plans</h4>
+        <p>No fluff — just results</p>
+      </div>
+      <div class="why-item">
+        <i class="fas fa-leaf"></i>
+        <h4>Sustainability Focus</h4>
+        <p>Eco-friendly & compliant</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to Grow Your Fashion Business?</h2>
+    <p>Book a free 30-min consultation. Let’s turn your vision into a profitable brand.</p>
+    <a href="contact.html" class="btn" style="background:white;color:var(--primary);">Schedule Call</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ASAP Growth Partners. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
 </body>
 </html>
