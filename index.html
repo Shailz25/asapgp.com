@@ -13,9 +13,9 @@
     
     <style>
         :root {
-            --primary: #d4af37;   
-            --secondary: #1a1a1a;  
-            --accent: #e63946;    
+            --primary: #2563eb;   
+            --secondary: #0f172a;  
+            --accent: #f59e0b;    
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
@@ -47,35 +47,80 @@
         
   
         .hero {
-            height: 100vh;
-            min-height: 600px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1551489186-cf8726f514f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            height: auto;
+            min-height: 550px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
+            padding: 80px 0 60px;
         }
         
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             padding: 2rem;
             animation: fadeInUp 1s ease-out;
         }
         
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
             color: white;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
         .hero .tagline {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
             font-weight: 300;
+            color: #e0e7ff;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .hero-card:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .hero-card p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            text-align: center;
         }
         
         .cta-btn {
@@ -564,12 +609,35 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>ASAP Growth Partners</h1>
-            <p class="tagline">Your Trusted Partner for Garment Business Success</p>
-            <p style="margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Empowering apparel entrepreneurs with expert guidance, from concept to commercial scaling in the competitive Indian market.
+            <h1>Scale Your Apparel Brand with Expert Guidance</h1>
+            <p class="tagline">From Design to Distribution — We Build Profitable, Scalable Apparel Businesses</p>
+            <p style="margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; color: #cbd5e1;">
+                ASAP Growth Partners partners with designers, startups, and manufacturers to solve production challenges, strengthen brands, and accelerate profitable growth in the competitive Indian apparel market.
             </p>
-            <a href="#contact" class="cta-btn">Apparel Success Acceleration Program</a>
+            <a href="#contact" class="cta-btn">Start Your Growth Program</a>
+
+            <div class="hero-grid">
+                <div class="hero-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product Development">
+                    <h3><i class="fas fa-tshirt"></i> Product Development</h3>
+                    <p>Tech packs, sampling & vendor selection to get collections production-ready</p>
+                </div>
+                <div class="hero-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Production">
+                    <h3><i class="fas fa-industry"></i> Production Consulting</h3>
+                    <p>Factory sourcing, quality control & workflow optimization for scale</p>
+                </div>
+                <div class="hero-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Brand Strategy">
+                    <h3><i class="fas fa-chart-line"></i> Brand & Go-to-Market</h3>
+                    <p>Brand positioning, digital strategy & D2C readiness for faster growth</p>
+                </div>
+                <div class="hero-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sustainability">
+                    <h3><i class="fas fa-leaf"></i> Sustainability & Compliance</h3>
+                    <p>Eco-sourcing, certifications & compliance to improve margins & brand value</p>
+                </div>
+            </div>
         </div>
     </section>
 
