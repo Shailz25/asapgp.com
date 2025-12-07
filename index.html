@@ -13,12 +13,12 @@
     
     <style>
         :root {
-            --primary: #2563eb;   
-            --secondary: #0f172a;  
-            --accent: #f59e0b;    
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
+            --primary: #dc2626;   
+            --secondary: #1f2937;  
+            --accent: #ef4444;    
+            --light: #f9fafb;
+            --dark: #111827;
+            --gray: #6b7280;
         }
         
         * {
@@ -49,12 +49,12 @@
         .hero {
             height: auto;
             min-height: 550px;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: #1f2937;
             position: relative;
             padding: 80px 0 60px;
         }
@@ -68,15 +68,15 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            color: #1f2937;
+            text-shadow: none;
         }
         
         .hero .tagline {
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
             font-weight: 300;
-            color: #e0e7ff;
+            color: #6b7280;
         }
 
         .hero-grid {
@@ -87,8 +87,8 @@
         }
 
         .hero-card {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.7);
+            border: 1px solid #e5e7eb;
             border-radius: 12px;
             padding: 1.5rem;
             backdrop-filter: blur(10px);
@@ -97,9 +97,10 @@
         }
 
         .hero-card:hover {
-            background: rgba(255,255,255,0.12);
-            border-color: var(--accent);
+            background: #ffffff;
+            border-color: var(--primary);
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
         }
 
         .hero-card img {
@@ -111,34 +112,34 @@
         }
 
         .hero-card h3 {
-            color: var(--accent);
+            color: var(--primary);
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
             text-align: center;
         }
 
         .hero-card p {
-            color: #cbd5e1;
+            color: #6b7280;
             font-size: 0.95rem;
             text-align: center;
         }
         
         .cta-btn {
             display: inline-block;
-            background: var(--accent);
+            background: var(--primary);
             color: white;
             padding: 14px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
         }
         
         .cta-btn:hover {
-            background: #c1121f;
+            background: #b91c1c;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
         }
         
         /* Navigation */
@@ -146,11 +147,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(26,26,26,0.95);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
             transition: all 0.3s ease;
+            border-bottom: 1px solid #e5e7eb;
         }
         
         .nav-container {
@@ -202,14 +204,14 @@
             top: 12px;
             z-index: 1601;
             padding: 6px;
-            background: rgba(0,0,0,0.12);
+            background: rgba(220, 38, 38, 0.08);
             border-radius: 8px;
         }
 
         .hamburger span {
             display: block;
             height: 3px;
-            background: white;
+            background: var(--primary);
             border-radius: 2px;
             transition: transform 0.25s ease, opacity 0.25s ease;
         }
@@ -220,11 +222,11 @@
             left: 0;
             width: 280px;
             height: 100vh;
-            background: linear-gradient(180deg, rgba(26,26,26,0.98), #111);
-            color: white;
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), #f9fafb);
+            color: #1f2937;
             padding: 2rem 1.2rem;
             z-index: 1500;
-            box-shadow: 4px 0 30px rgba(0,0,0,0.5);
+            box-shadow: 4px 0 30px rgba(0,0,0,0.08);
             transition: transform 0.28s cubic-bezier(.2,.9,.2,1);
             transform: translateX(-100%);
             overflow-x: hidden;
@@ -240,7 +242,7 @@
             top: 12px;
             background: transparent;
             border: none;
-            color: white;
+            color: #1f2937;
             font-size: 1rem;
             cursor: pointer;
             padding: 6px 8px;
@@ -257,11 +259,11 @@
             display: block;
             box-sizing: border-box;
             width: 100%;
-            color: white;
+            color: #1f2937;
             text-decoration: none;
             padding: 0.8rem 0;
             font-size: 1.05rem;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             word-break: break-word;
         }
 
@@ -339,7 +341,7 @@
         
 
         #services {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
         }
         
         .services-grid {
@@ -403,7 +405,7 @@
         
         .service-card li::before {
             content: '✓';
-            color: var(--accent);
+            color: var(--primary);
             font-weight: bold;
             position: absolute;
             left: 0;
@@ -434,7 +436,7 @@
         
 
         #contact {
-            background: linear-gradient(135deg, var(--secondary) 0%, #2c2c2c 100%);
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
             color: white;
         }
         
