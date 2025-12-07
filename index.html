@@ -140,6 +140,81 @@
             color: var(--primary);
         }
         
+        /* Sidebar & Hamburger */
+        .hamburger {
+            width: 44px;
+            height: 36px;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(26,26,26,0.98), #111);
+            color: white;
+            padding: 2rem 1.2rem;
+            z-index: 1500;
+            box-shadow: 4px 0 30px rgba(0,0,0,0.5);
+            transition: transform 0.35s cubic-bezier(.2,.9,.2,1);
+            transform: translateX(0);
+        }
+
+        .sidebar.open {
+            left: 0;
+            transform: translateX(300px);
+            transform: translateX(0);
+        }
+
+        .sidebar .close-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 0;
+            font-size: 1.05rem;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 1400;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
 
         section {
             padding: 100px 0;
@@ -420,6 +495,11 @@
             .nav-links {
                 display: none;
             }
+
+            /* show hamburger on mobile */
+            .hamburger {
+                display: inline-flex;
+            }
             
             .hero {
                 height: 80vh;
@@ -433,6 +513,16 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">ASAP Growth Partners</a>
+
+            <div>
+                <button class="hamburger" id="menu-btn" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
@@ -441,6 +531,19 @@
             </div>
         </div>
     </nav>
+
+    <!-- Sidebar (hidden by default) -->
+    <aside class="sidebar" id="sidebar" aria-hidden="true">
+        <button class="close-btn" id="close-btn" aria-label="Close menu">&times; Close</button>
+        <nav class="sidebar-nav">
+            <a href="#about" class="sidebar-link">About</a>
+            <a href="#services" class="sidebar-link">Services</a>
+            <a href="#why-us" class="sidebar-link">Why Us</a>
+            <a href="#contact" class="sidebar-link">Contact</a>
+        </nav>
+    </aside>
+
+    <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -643,7 +746,7 @@
         <p>&copy; 2025 ASAP Growth Partners. All rights reserved. | Empowering Indian Apparel Brands</p>
     </footer>
 
-    <!-- Animation on Scroll -->
+    <!-- Animation on Scroll + Sidebar Toggle -->
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -656,6 +759,48 @@
         document.querySelectorAll('.animate').forEach(el => {
             observer.observe(el);
         });
+
+        // Sidebar toggle
+        (function() {
+            const menuBtn = document.getElementById('menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const closeBtn = document.getElementById('close-btn');
+
+            function openSidebar() {
+                sidebar.classList.add('open');
+                overlay.classList.add('visible');
+                sidebar.setAttribute('aria-hidden', 'false');
+                menuBtn.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('visible');
+                sidebar.setAttribute('aria-hidden', 'true');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+
+            menuBtn.addEventListener('click', () => {
+                const isOpen = sidebar.classList.contains('open');
+                if (isOpen) closeSidebar(); else openSidebar();
+            });
+
+            closeBtn.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+
+            // Close sidebar on Esc
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeSidebar();
+            });
+
+            // Auto-close when clicking a link inside sidebar
+            document.querySelectorAll('.sidebar-link').forEach(a => {
+                a.addEventListener('click', () => {
+                    closeSidebar();
+                });
+            });
+        })();
     </script>
 
 </body>
