@@ -4,48 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASAP Growth Partners - Apparel Success Acceleration Program</title>
-    
-  
+   
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
- 
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+   
     <style>
         :root {
-            --primary: #dc2626;   
-            --secondary: #1f2937;  
-            --accent: #ef4444;    
+            --primary: #dc2626;
+            --secondary: #1f2937;
+            --accent: #ef4444;
             --light: #f9fafb;
             --dark: #111827;
             --gray: #6b7280;
         }
-        
+       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+       
         body {
             font-family: 'Inter', sans-serif;
             color: var(--dark);
             line-height: 1.7;
             overflow-x: hidden;
         }
-        
+       
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             color: var(--secondary);
         }
-        
-
+       
         html {
             scroll-behavior: smooth;
         }
-        
-  
+       
         .hero {
             height: auto;
             min-height: 550px;
@@ -58,34 +54,32 @@
             position: relative;
             padding: 80px 0 60px;
         }
-        
+       
         .hero-content {
             max-width: 1000px;
             padding: 2rem;
             animation: fadeInUp 1s ease-out;
         }
-        
+       
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             color: #1f2937;
             text-shadow: none;
         }
-        
+       
         .hero .tagline {
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
             font-weight: 300;
             color: #6b7280;
         }
-
         .hero-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
-
         .hero-card {
             background: rgba(255,255,255,0.7);
             border: 1px solid #e5e7eb;
@@ -95,14 +89,12 @@
             transition: all 0.3s ease;
             text-align: left;
         }
-
         .hero-card:hover {
             background: #ffffff;
             border-color: var(--primary);
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
         }
-
         .hero-card img {
             width: 100%;
             height: 140px;
@@ -110,20 +102,18 @@
             border-radius: 8px;
             margin-bottom: 1rem;
         }
-
         .hero-card h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
             text-align: center;
         }
-
         .hero-card p {
             color: #6b7280;
             font-size: 0.95rem;
             text-align: center;
         }
-        
+       
         .cta-btn {
             display: inline-block;
             background: var(--primary);
@@ -135,13 +125,13 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
         }
-        
+       
         .cta-btn:hover {
             background: #b91c1c;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
         }
-        
+       
         /* Navigation */
         nav {
             position: fixed;
@@ -154,7 +144,7 @@
             transition: all 0.3s ease;
             border-bottom: 1px solid #e5e7eb;
         }
-        
+       
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -163,7 +153,7 @@
             align-items: center;
             padding: 0 2rem;
         }
-        
+       
         .logo {
             color: var(--primary);
             font-size: 1.5rem;
@@ -171,23 +161,23 @@
             text-decoration: none;
             margin-left: 56px;
         }
-        
+       
         .nav-links {
             display: none;
             gap: 2rem;
         }
-        
+       
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+       
         .nav-links a:hover {
             color: var(--primary);
         }
-        
+       
         /* Sidebar & Hamburger */
         .hamburger {
             width: 44px;
@@ -207,7 +197,6 @@
             background: rgba(220, 38, 38, 0.08);
             border-radius: 8px;
         }
-
         .hamburger span {
             display: block;
             height: 3px;
@@ -215,7 +204,6 @@
             border-radius: 2px;
             transition: transform 0.25s ease, opacity 0.25s ease;
         }
-
         .sidebar {
             position: fixed;
             top: 0;
@@ -231,11 +219,9 @@
             transform: translateX(-100%);
             overflow-x: hidden;
         }
-
         .sidebar.open {
             transform: translateX(0);
         }
-
         .sidebar .close-btn {
             position: absolute;
             left: 12px;
@@ -250,11 +236,9 @@
             align-items: center;
             gap: 8px;
         }
-
-        .sidebar nav { 
+        .sidebar nav {
             padding-top: 48px;
         }
-
         .sidebar a {
             display: block;
             box-sizing: border-box;
@@ -266,7 +250,6 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
             word-break: break-word;
         }
-
         .overlay {
             position: fixed;
             inset: 0;
@@ -276,34 +259,31 @@
             pointer-events: none;
             transition: opacity 0.3s ease;
         }
-
         .overlay.visible {
             opacity: 1;
             pointer-events: auto;
         }
-
-
         section {
             padding: 100px 0;
         }
-        
+       
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-        
+       
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
         }
-        
+       
         .section-title h2 {
             font-size: 2.8rem;
             margin-bottom: 1rem;
         }
-        
+       
         .section-title::after {
             content: '';
             width: 80px;
@@ -313,43 +293,41 @@
             margin: 1rem auto;
             border-radius: 2px;
         }
-        
-
+       
         #about {
             background: white;
         }
-        
+       
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-        
+       
         .vision-mission {
             background: var(--light);
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
-        
+       
         .vision-mission h3 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
-        
-
+       
         #services {
             background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
         }
-        
+       
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
+       
         .service-card {
             background: white;
             padding: 2.5rem;
@@ -359,7 +337,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+       
         .service-card::before {
             content: '';
             position: absolute;
@@ -371,38 +349,38 @@
             transform: scaleY(0);
             transition: transform 0.3s ease;
         }
-        
+       
         .service-card:hover::before {
             transform: scaleY(1);
         }
-        
+       
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
-        
+       
         .service-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
-        
+       
         .service-card h3 {
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
-        
+       
         .service-card ul {
             list-style: none;
             padding-left: 0;
         }
-        
+       
         .service-card li {
             padding: 0.4rem 0;
             position: relative;
             padding-left: 1.5rem;
         }
-        
+       
         .service-card li::before {
             content: '✓';
             color: var(--primary);
@@ -410,78 +388,76 @@
             position: absolute;
             left: 0;
         }
-        
-
+       
         #why-us {
             background: white;
         }
-        
+       
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+       
         .feature-item {
             text-align: center;
             padding: 2rem;
         }
-        
+       
         .feature-icon {
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
-        
-
+       
         #contact {
             background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
             color: white;
         }
-        
+       
         #contact .section-title h2,
         #contact .section-title::after {
             color: white;
             background: var(--primary);
         }
-        
+       
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             margin-top: 3rem;
         }
-        
+       
         .contact-info h3 {
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
-        
+       
         .contact-item {
             display: flex;
             align-items: center;
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
         }
-        
+       
         .contact-item i {
             color: var(--primary);
             margin-right: 1rem;
             font-size: 1.3rem;
         }
-        
+       
         .contact-form {
             background: rgba(255,255,255,0.1);
             padding: 2.5rem;
             border-radius: 16px;
             backdrop-filter: blur(10px);
         }
-        
+       
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
+       
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -492,16 +468,16 @@
             font-family: inherit;
             transition: all 0.3s;
         }
-        
+       
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             box-shadow: 0 0 0 3px var(--primary);
         }
-        
+       
         .submit-btn {
             background: var(--primary);
-            color: var(--secondary);
+            color: white;
             border: none;
             padding: 1rem 2rem;
             border-radius: 50px;
@@ -510,13 +486,12 @@
             transition: all 0.3s;
             font-size: 1.1rem;
         }
-        
+       
         .submit-btn:hover {
-            background: #c19a2e;
+            background: #b91c1c;
             transform: translateY(-2px);
         }
-        
-
+       
         footer {
             background: var(--secondary);
             color: #aaa;
@@ -524,7 +499,7 @@
             padding: 2rem 0;
             font-size: 0.9rem;
         }
-        
+       
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -536,55 +511,79 @@
                 transform: translateY(0);
             }
         }
-        
+       
         .animate {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
         }
-        
+       
         .animate.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+       
         /* Mobile */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.8rem;
             }
-            
+           
             .hero {
                 height: auto;
                 min-height: auto;
                 padding: 80px 0 80px !important;
             }
-
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
                 margin-bottom: 2rem;
             }
-            
+           
             .about-grid,
             .contact-content {
                 grid-template-columns: 1fr;
             }
-            
-            /* show hamburger on mobile */
+           
             .hamburger {
                 display: inline-flex;
             }
         }
+
+        /* Thank You Message Style (shown after Formspree success) */
+        .thank-you-message {
+            text-align: center;
+            padding: 100px 20px;
+            background: #f9fafb;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .thank-you-message h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .thank-you-message p {
+            font-size: 1.3rem;
+            color: #4b5563;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        .thank-you-message a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
-
-
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">ASAP Growth Partners</a>
-
             <div>
                 <button class="hamburger" id="menu-btn" aria-label="Open menu" aria-expanded="false">
                     <span></span>
@@ -593,7 +592,6 @@
                     <span></span>
                 </button>
             </div>
-
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
@@ -602,7 +600,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Sidebar (hidden by default) -->
     <aside class="sidebar" id="sidebar" aria-hidden="true">
         <button class="close-btn" id="close-btn" aria-label="Close menu">← Back</button>
@@ -613,7 +610,6 @@
             <a href="#contact" class="sidebar-link">Contact</a>
         </nav>
     </aside>
-
     <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
 
     <!-- Hero Section -->
@@ -625,7 +621,6 @@
                 ASAP Growth Partners partners with designers, startups, and manufacturers to solve production challenges, strengthen brands, and accelerate profitable growth in the competitive Indian apparel market.
             </p>
             <a href="#contact" class="cta-btn">Start Your Growth Program</a>
-
             <div class="hero-grid">
                 <div class="hero-card">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product Development">
@@ -652,7 +647,7 @@
             <div class="section-title">
                 <h2>About Us</h2>
             </div>
-            
+           
             <div class="about-grid">
                 <div>
                     <p class="animate">
@@ -662,13 +657,13 @@
                         We offer <strong>end-to-end services</strong>—from concept development and production planning to branding, marketing, and scaling strategies.
                     </p>
                 </div>
-                
+               
                 <div>
                     <div class="vision-mission animate">
                         <h3>Our Vision</h3>
                         <p>To become the most trusted partner for fashion entrepreneurs and garment businesses aiming to grow sustainably.</p>
                     </div>
-                    
+                   
                     <div class="vision-mission animate" style="margin-top: 1.5rem;">
                         <h3>Our Mission</h3>
                         <p>To empower garment businesses with expert guidance, industry best practices, and tailored strategies that bridge the gap between creativity and commercial success.</p>
@@ -684,7 +679,7 @@
             <div class="section-title">
                 <h2>Our Services</h2>
             </div>
-            
+           
             <div class="services-grid">
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-chart-line"></i></div>
@@ -695,7 +690,7 @@
                         <li>Brand positioning</li>
                     </ul>
                 </div>
-                
+               
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-tshirt"></i></div>
                     <h3>Product Development</h3>
@@ -705,7 +700,7 @@
                         <li>Vendor/factory connection</li>
                     </ul>
                 </div>
-                
+               
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-cogs"></i></div>
                     <h3>Production Consultancy</h3>
@@ -715,7 +710,7 @@
                         <li>Cost management</li>
                     </ul>
                 </div>
-                
+               
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
                     <h3>Branding & Marketing</h3>
@@ -725,7 +720,7 @@
                         <li>E-commerce setup guidance</li>
                     </ul>
                 </div>
-                
+               
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-store"></i></div>
                     <h3>Sales & Distribution</h3>
@@ -745,33 +740,33 @@
             <div class="section-title">
                 <h2>Why Choose Us?</h2>
             </div>
-            
+           
             <div class="features-grid">
                 <div class="feature-item animate">
                     <div class="feature-icon"><i class="fas fa-brain"></i></div>
                     <h4>Deep Industry Knowledge</h4>
                     <p>From field experience</p>
                 </div>
-                
+               
                 <div class="feature-item animate">
                     <div class="feature-icon"><i class="fas fa-handshake"></i></div>
                     <h4>Reliable Network</h4>
                     <p>Vendors, manufacturers & tools</p>
                 </div>
-                
+               
                 <div class="feature-item animate">
                     <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
                     <h4>Actionable Plans</h4>
                     <p>Not just theory</p>
                 </div>
-                
+               
                 <div class="feature-item animate">
                     <div class="feature-icon"><i class="fas fa-users"></i></div>
                     <h4>Expert Team</h4>
                     <p>Designers, merchandisers, marketers</p>
                 </div>
             </div>
-            
+           
             <div style="margin-top: 4rem; text-align: center;">
                 <p><strong>Target Clients:</strong> Fashion designers, startup founders, boutique manufacturers, export houses, e-commerce brands, textile investors.</p>
                 <p style="margin-top: 1rem;"><strong>Business Model:</strong> Monthly/quarterly packages, project-based, workshops, retainers.</p>
@@ -785,7 +780,7 @@
             <div class="section-title">
                 <h2>Get In Touch</h2>
             </div>
-            
+           
             <div class="contact-content">
                 <div>
                     <h3 style="color: white; text-transform: uppercase;">CONTACT INFORMATION</h3>
@@ -802,30 +797,37 @@
                         <span>Ahmedabad, India</span>
                     </div>
                 </div>
-                
-     <div class="contact-form animate">
-    <form action="https://formspree.io/f/mykgelqe" method="POST">
-        <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-            <input type="email" name="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        </div>
-        
-        <!-- Optional: Hidden field to redirect after submission (create a thanks.html page or use your homepage) -->
-        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
-        
-        <!-- Optional: Prevents spam bots -->
-        <input type="text" name="_gotcha" style="display:none">
-        
-        <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-</div>
+               
+                <div class="contact-form animate">
+                    <form action="https://formspree.io/f/mykgelqe" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        
+                        <!-- Honeypot anti-spam field (hidden) -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <!-- Redirect to thank you section after submission -->
+                        <input type="hidden" name="_next" value="#thank-you">
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Thank You Section (shown after successful submission) -->
+    <section id="thank-you" class="thank-you-message" style="display: none;">
+        <h1>Thank You!</h1>
+        <p>We have received your message and will get back to you as soon as possible.</p>
+        <p><a href="#">← Back to Home</a></p>
     </section>
 
     <!-- Footer -->
@@ -833,7 +835,7 @@
         <p>&copy; 2025 ASAP Growth Partners. All rights reserved. | Empowering Indian Apparel Brands</p>
     </footer>
 
-    <!-- Animation on Scroll + Sidebar Toggle -->
+    <!-- Animation on Scroll + Sidebar Toggle + Thank You Redirect Handling -->
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -842,7 +844,6 @@
                 }
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.animate').forEach(el => {
             observer.observe(el);
         });
@@ -853,42 +854,43 @@
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('overlay');
             const closeBtn = document.getElementById('close-btn');
-
             function openSidebar() {
                 sidebar.classList.add('open');
                 overlay.classList.add('visible');
                 sidebar.setAttribute('aria-hidden', 'false');
                 menuBtn.setAttribute('aria-expanded', 'true');
             }
-
             function closeSidebar() {
                 sidebar.classList.remove('open');
                 overlay.classList.remove('visible');
                 sidebar.setAttribute('aria-hidden', 'true');
                 menuBtn.setAttribute('aria-expanded', 'false');
             }
-
             menuBtn.addEventListener('click', () => {
                 const isOpen = sidebar.classList.contains('open');
                 if (isOpen) closeSidebar(); else openSidebar();
             });
-
             closeBtn.addEventListener('click', closeSidebar);
             overlay.addEventListener('click', closeSidebar);
-
-            // Close sidebar on Esc
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') closeSidebar();
             });
-
-            // Auto-close when clicking a link inside sidebar
             document.querySelectorAll('.sidebar-link').forEach(a => {
                 a.addEventListener('click', () => {
                     closeSidebar();
                 });
             });
         })();
-    </script>
 
+        // Show Thank You section if URL has #thank-you (after Formspree redirect)
+        if (window.location.hash === '#thank-you') {
+            document.getElementById('thank-you').style.display = 'flex';
+            document.querySelectorAll('section:not(#thank-you)').forEach(sec => {
+                sec.style.display = 'none';
+            });
+            document.querySelector('nav').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
