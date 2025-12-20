@@ -617,7 +617,7 @@
         <div class="hero-content">
             <h1>Scale Your Apparel Brand with Expert Guidance</h1>
             <p class="tagline">From Design to Distribution — We Build Profitable, Scalable Apparel Businesses</p>
-            <p style="margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; color: #cbd5e1;">
+            <p style="margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; color: #1f2937;">
                 ASAP Growth Partners partners with designers, startups, and manufacturers to solve production challenges, strengthen brands, and accelerate profitable growth in the competitive Indian apparel market.
             </p>
             <a href="#contact" class="cta-btn">Start Your Growth Program</a>
@@ -799,7 +799,7 @@
                 </div>
                
                 <div class="contact-form animate">
-                    <form action="https://formsubmit.co/shailendrasingh.vapi@gmail.com" method="POST">
+                    <form action="send_email.php" method="POST">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required>
                         </div>
@@ -809,18 +809,6 @@
                         <div class="form-group">
                             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
-                        
-                        <!-- Anti-spam honeypot (hidden from users) -->
-                        <input type="text" name="_honey" style="display:none">
-                        
-                        <!-- Disable captcha (optional, removes reCAPTCHA) -->
-                        <input type="hidden" name="_captcha" value="false">
-                        
-                        <!-- Custom email subject -->
-                        <input type="hidden" name="_subject" value="New Enquiry from ASAP Growth Partners Website">
-                        
-                        <!-- Redirect to thank you section after submission -->
-                        <input type="hidden" name="_next" value="?thankyou=true#thank-you">
                         
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
@@ -896,7 +884,7 @@
             });
             document.querySelector('nav').style.display = 'none';
             document.querySelector('footer').style.display = 'none';
-            // Clean URL (optional - removes ?thankyou=true)
+            // Clean the URL
             history.replaceState({}, '', window.location.pathname);
         }
     </script>
