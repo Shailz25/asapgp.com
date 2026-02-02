@@ -23,9 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // GoDaddy allows mail() without extra config
     if (mail($recipient, $subject, $email_content, $email_headers)) {
         // Redirect to thank you
-        header("Location: yourpage.html?thankyou=true#thank-you");
+        header("Location: index.html?thankyou=true#thank-you");
     } else {
-        echo "Oops! Something went wrong.";
+        http_response_code(500);
+        echo "Oops! Something went wrong. Please try again later.";
     }
 }
 ?>
