@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASAP Growth Partners - Apparel Business Growth & Scale</title>
+    <title>ASAP Growth Partners - Apparel Success Acceleration Program</title>
    
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
    
     <style>
         :root {
-            --teal: #0d9488;
-            --teal-dark: #0f766e;
-            --teal-light: #ccfbf1;
-            --white: #ffffff;
-            --dark: #1f2937;
-            --text: #374151;
-            --light-gray: #f8fafc;
-            --border: #e5e7eb;
+            --primary: #dc2626;
+            --secondary: #1f2937;
+            --accent: #ef4444;
+            --light: #f9fafb;
+            --dark: #111827;
+            --gray: #6b7280;
         }
        
         * {
@@ -28,22 +26,110 @@
         }
        
         body {
-            font-family: 'Sora', sans-serif;
-            color: var(--text);
-            line-height: 1.8;
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
             overflow-x: hidden;
-            background: var(--white);
         }
        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Fraunces', serif;
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
-            color: var(--dark);
-            line-height: 1.3;
+            color: var(--secondary);
         }
        
         html {
             scroll-behavior: smooth;
+        }
+       
+        .hero {
+            height: auto;
+            min-height: 550px;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #1f2937;
+            position: relative;
+            padding: 80px 0 60px;
+        }
+       
+        .hero-content {
+            max-width: 1000px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+       
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+            text-shadow: none;
+        }
+       
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            color: #6b7280;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .hero-card {
+            background: rgba(255,255,255,0.7);
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        .hero-card:hover {
+            background: #ffffff;
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .hero-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .hero-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .hero-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+       
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+        }
+       
+        .cta-btn:hover {
+            background: #b91c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
         }
        
         /* Navigation */
@@ -51,16 +137,16 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(29, 53, 87, 0.95);
-            backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
-            transition: all 0.4s ease;
-            border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #e5e7eb;
         }
        
         .nav-container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -69,32 +155,27 @@
         }
        
         .logo {
-            color: #ffffff;
-            font-size: 1.4rem;
+            color: var(--primary);
+            font-size: 1.5rem;
             font-weight: 700;
             text-decoration: none;
             margin-left: 56px;
-            font-family: 'Fraunces', serif;
-            letter-spacing: 0.5px;
         }
        
         .nav-links {
             display: none;
-            gap: 2.5rem;
+            gap: 2rem;
         }
        
         .nav-links a {
-            color: rgba(255,255,255,0.9);
+            color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            transition: color 0.3s;
         }
        
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--primary);
         }
        
         /* Sidebar & Hamburger */
@@ -113,13 +194,13 @@
             top: 12px;
             z-index: 1601;
             padding: 6px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(220, 38, 38, 0.08);
             border-radius: 8px;
         }
         .hamburger span {
             display: block;
             height: 3px;
-            background: white;
+            background: var(--primary);
             border-radius: 2px;
             transition: transform 0.25s ease, opacity 0.25s ease;
         }
@@ -129,11 +210,11 @@
             left: 0;
             width: 280px;
             height: 100vh;
-            background: linear-gradient(180deg, #1d3557 0%, #14243d 100%);
-            color: white;
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), #f9fafb);
+            color: #1f2937;
             padding: 2rem 1.2rem;
             z-index: 1500;
-            box-shadow: 4px 0 30px rgba(0,0,0,0.2);
+            box-shadow: 4px 0 30px rgba(0,0,0,0.08);
             transition: transform 0.28s cubic-bezier(.2,.9,.2,1);
             transform: translateX(-100%);
             overflow-x: hidden;
@@ -147,7 +228,7 @@
             top: 12px;
             background: transparent;
             border: none;
-            color: white;
+            color: #1f2937;
             font-size: 1rem;
             cursor: pointer;
             padding: 6px 8px;
@@ -162,22 +243,17 @@
             display: block;
             box-sizing: border-box;
             width: 100%;
-            color: rgba(255,255,255,0.9);
+            color: #1f2937;
             text-decoration: none;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             font-size: 1.05rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             word-break: break-word;
-            transition: all 0.3s;
-        }
-        .sidebar a:hover {
-            color: var(--gold);
-            padding-left: 0.5rem;
         }
         .overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.45);
             z-index: 1400;
             opacity: 0;
             pointer-events: none;
@@ -187,146 +263,8 @@
             opacity: 1;
             pointer-events: auto;
         }
-
-        /* Hero Section */
-        .hero {
-            height: auto;
-            min-height: 700px;
-            background: linear-gradient(135deg, #1d3557 0%, #14243d 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            padding: 120px 0 80px;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(230, 57, 70, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            top: -200px;
-            right: -150px;
-            z-index: 1;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(247, 127, 0, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            bottom: -100px;
-            left: -100px;
-            z-index: 1;
-        }
-       
-        .hero-content {
-            max-width: 1000px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
-            position: relative;
-            z-index: 2;
-        }
-       
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            color: white;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-       
-        .hero .tagline {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            color: rgba(255,255,255,0.9);
-            letter-spacing: 0.5px;
-        }
-
-        .hero > div > p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: rgba(255,255,255,0.85);
-            line-height: 1.8;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: var(--gold);
-            color: #1d3557;
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(247, 127, 0, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-       
-        .cta-btn:hover {
-            background: #e67e22;
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(247, 127, 0, 0.4);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .hero-card {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 16px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-card:hover {
-            background: rgba(255,255,255,0.12);
-            border-color: var(--gold);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(247, 127, 0, 0.15);
-        }
-
-        .hero-card i {
-            font-size: 3.5rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .hero-card h3 {
-            color: white;
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-        }
-
-        .hero-card p {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.95rem;
-        }
-       
         section {
-            padding: 120px 0;
+            padding: 100px 0;
         }
        
         .container {
@@ -337,37 +275,27 @@
        
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             position: relative;
         }
        
         .section-title h2 {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .section-title p {
-            font-size: 1.1rem;
-            color: var(--text);
-            max-width: 600px;
-            margin: 1rem auto 0;
-            line-height: 1.8;
         }
        
         .section-title::after {
             content: '';
-            width: 120px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--gold));
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
             display: block;
-            margin: 1.5rem auto;
-            border-radius: 3px;
+            margin: 1rem auto;
+            border-radius: 2px;
         }
        
-        /* About Section */
         #about {
-            background: var(--light-gray);
+            background: white;
         }
        
         .about-grid {
@@ -376,99 +304,70 @@
             gap: 4rem;
             align-items: center;
         }
-
-        .about-grid > div:first-child p {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-        }
-
-        .about-grid > div:first-child strong {
-            color: var(--primary);
-        }
        
         .vision-mission {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-left: 5px solid var(--gold);
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
        
         .vision-mission h3 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.6rem;
-        }
-
-        .vision-mission p {
-            color: var(--text);
-            line-height: 1.8;
+            font-size: 1.5rem;
         }
        
-        /* Services Section */
         #services {
-            background: white;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
         }
        
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
        
         .service-card {
             background: white;
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(230, 57, 70, 0.1);
         }
-
+       
         .service-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--gold));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
         }
        
         .service-card:hover::before {
-            transform: scaleX(1);
+            transform: scaleY(1);
         }
        
         .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 50px rgba(230, 57, 70, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
        
         .service-icon {
-            font-size: 3rem;
-            color: var(--gold);
+            font-size: 2.5rem;
+            color: var(--primary);
             margin-bottom: 1.5rem;
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(247, 127, 0, 0.1));
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
         }
        
         .service-card h3 {
-            margin-bottom: 1.2rem;
-            font-size: 1.5rem;
-            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
         }
        
         .service-card ul {
@@ -477,96 +376,50 @@
         }
        
         .service-card li {
-            padding: 0.6rem 0;
+            padding: 0.4rem 0;
             position: relative;
-            padding-left: 1.8rem;
-            color: var(--text);
-            font-size: 0.95rem;
+            padding-left: 1.5rem;
         }
        
         .service-card li::before {
             content: '✓';
-            color: var(--gold);
+            color: var(--primary);
             font-weight: bold;
             position: absolute;
             left: 0;
-            font-size: 1.2rem;
         }
        
-        /* Why Choose Us */
         #why-us {
-            background: var(--light-gray);
+            background: white;
         }
        
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
        
         .feature-item {
             text-align: center;
-            padding: 2.5rem;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.4s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(230, 57, 70, 0.1);
+            padding: 2rem;
         }
        
         .feature-icon {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .feature-item h4 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .feature-item p {
-            color: var(--text);
-            font-size: 0.95rem;
-        }
-
-        .why-us-bottom {
-            margin-top: 4rem;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-left: 5px solid var(--gold);
-        }
-
-        .why-us-bottom p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-
-        .why-us-bottom strong {
-            color: var(--primary);
+            margin-bottom: 1.5rem;
         }
        
-        /* Contact Section */
         #contact {
-            background: linear-gradient(135deg, #1d3557 0%, #14243d 100%);
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
             color: white;
         }
        
-        #contact .section-title h2 {
-            color: white;
-        }
-
+        #contact .section-title h2,
         #contact .section-title::after {
-            background: linear-gradient(90deg, var(--gold), var(--primary));
+            color: white;
+            background: var(--primary);
         }
        
         .contact-content {
@@ -575,112 +428,83 @@
             gap: 4rem;
             margin-top: 3rem;
         }
-
+       
         .contact-info h3 {
-            color: var(--gold);
-            margin-bottom: 2rem;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
         }
        
         .contact-item {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
        
         .contact-item i {
-            color: var(--gold);
-            margin-right: 1.2rem;
-            font-size: 1.5rem;
-            margin-top: 0.3rem;
-        }
-
-        .contact-item span {
-            color: rgba(255,255,255,0.9);
-            line-height: 1.6;
+            color: var(--primary);
+            margin-right: 1rem;
+            font-size: 1.3rem;
         }
        
         .contact-form {
-            background: rgba(255,255,255,0.08);
-            padding: 3rem;
+            background: rgba(255,255,255,0.1);
+            padding: 2.5rem;
             border-radius: 16px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.15);
         }
        
         .form-group {
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
        
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1.2rem;
+            padding: 1rem;
             border: none;
             border-radius: 8px;
-            background: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.9);
             font-family: inherit;
             transition: all 0.3s;
-            font-size: 1rem;
-            color: var(--dark);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(45, 62, 80, 0.6);
         }
        
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            box-shadow: 0 0 0 3px var(--gold);
-            background: white;
-            transform: scale(1.02);
+            box-shadow: 0 0 0 3px var(--primary);
         }
        
         .submit-btn {
-            background: var(--gold);
-            color: #1d3557;
+            background: var(--primary);
+            color: white;
             border: none;
-            padding: 1.2rem 2.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            width: 100%;
-            box-shadow: 0 10px 30px rgba(247, 127, 0, 0.3);
+            font-size: 1.1rem;
         }
        
         .submit-btn:hover {
-            background: #e67e22;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(247, 127, 0, 0.4);
+            background: #b91c1c;
+            transform: translateY(-2px);
         }
        
         footer {
-            background: #0f1820;
-            color: rgba(255,255,255,0.7);
+            background: var(--secondary);
+            color: #aaa;
             text-align: center;
-            padding: 3rem 0;
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        footer p {
-            line-height: 1.8;
+            padding: 2rem 0;
+            font-size: 0.9rem;
         }
        
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -690,8 +514,8 @@
        
         .animate {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
        
         .animate.visible {
@@ -702,34 +526,23 @@
         /* Mobile */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.1rem;
+                font-size: 2.8rem;
             }
            
             .hero {
-                padding: 100px 0 60px;
+                height: auto;
                 min-height: auto;
+                padding: 80px 0 80px !important;
             }
-
             .hero-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-bottom: 2rem;
             }
            
             .about-grid,
             .contact-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 80px 0;
             }
            
             .hamburger {
@@ -741,40 +554,29 @@
         .thank-you-message {
             text-align: center;
             padding: 100px 20px;
-            background: linear-gradient(135deg, var(--light-gray) 0%, white 100%);
+            background: #f9fafb;
             min-height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-
         .thank-you-message h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
-
         .thank-you-message p {
-            font-size: 1.2rem;
-            color: var(--text);
+            font-size: 1.3rem;
+            color: #4b5563;
             max-width: 600px;
             margin-bottom: 2rem;
-            line-height: 1.8;
         }
-
         .thank-you-message a {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-
-        .thank-you-message a:hover {
             color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
     </style>
 </head>
@@ -813,24 +615,26 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Scale Your <span>Apparel Brand</span> with Expert Guidance</h1>
-            <p class="tagline">End-to-End Apparel Business Consulting — From Concept to Profitable Scale</p>
-            <p>Partner with seasoned industry experts to solve production challenges, strengthen your brand identity, and accelerate growth in India's competitive apparel market. We've helped 50+ brands achieve sustainable success.</p>
-            <a href="#contact" class="cta-btn">Start Your Growth Journey</a>
+            <h1>Scale Your Apparel Brand with Expert Guidance</h1>
+            <p class="tagline">From Design to Distribution — We Build Profitable, Scalable Apparel Businesses</p>
+            <p style="margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; color: #1f2937;">
+                ASAP Growth Partners partners with designers, startups, and manufacturers to solve production challenges, strengthen brands, and accelerate profitable growth in the competitive Indian apparel market.
+            </p>
+            <a href="#contact" class="cta-btn">Start Your Growth Program</a>
             <div class="hero-grid">
                 <div class="hero-card">
-                    <i class="fas fa-tshirt"></i>
-                    <h3>Product Development</h3>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Product Development">
+                    <h3><i class="fas fa-tshirt"></i> Product Development</h3>
                     <p>Tech packs, sampling & vendor selection to get collections production-ready</p>
                 </div>
                 <div class="hero-card">
-                    <i class="fas fa-industry"></i>
-                    <h3>Production Excellence</h3>
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Production">
+                    <h3><i class="fas fa-industry"></i> Production Consulting</h3>
                     <p>Factory sourcing, quality control & workflow optimization for scale</p>
                 </div>
                 <div class="hero-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Brand Growth</h3>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Brand Strategy">
+                    <h3><i class="fas fa-chart-line"></i> Brand & Go-to-Market</h3>
                     <p>Brand positioning, digital strategy & D2C readiness for faster growth</p>
                 </div>
             </div>
@@ -841,29 +645,28 @@
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>Who We Are</h2>
-                <p>Specialized garment business consultancy empowering apparel entrepreneurs across India</p>
+                <h2>About Us</h2>
             </div>
            
             <div class="about-grid">
                 <div>
                     <p class="animate">
-                        <strong>ASAP Growth Partners</strong> is a dedicated garment business consultancy serving fashion designers, startups, and small-to-medium manufacturers. We combine deep industry expertise with actionable strategies to transform creative concepts into profitable, scalable businesses.
+                        ASAP Growth Partners is a specialized <strong>Garment Business Consultancy</strong> dedicated to helping apparel entrepreneurs, fashion startups, and small-to-medium manufacturers succeed in a competitive market.
                     </p>
-                    <p class="animate">
-                        With over 15+ years of collective experience in apparel manufacturing, production, and brand development, our team understands the unique challenges of the Indian fashion industry. We don't just advise—we partner with you through every stage of growth.
+                    <p class="animate" style="margin-top: 1.5rem;">
+                        We offer <strong>end-to-end services</strong>—from concept development and production planning to branding, marketing, and scaling strategies.
                     </p>
                 </div>
                
                 <div>
                     <div class="vision-mission animate">
-                        <h3><i class="fas fa-eye" style="margin-right: 0.8rem; color: var(--gold);"></i>Our Vision</h3>
-                        <p>To become the most trusted partner for fashion entrepreneurs and garment businesses aiming for sustainable, profitable growth in the Indian and global markets.</p>
+                        <h3>Our Vision</h3>
+                        <p>To become the most trusted partner for fashion entrepreneurs and garment businesses aiming to grow sustainably.</p>
                     </div>
                    
                     <div class="vision-mission animate" style="margin-top: 1.5rem;">
-                        <h3><i class="fas fa-rocket" style="margin-right: 0.8rem; color: var(--gold);"></i>Our Mission</h3>
-                        <p>Empower garment businesses with expert guidance, industry best practices, and tailored strategies that bridge the gap between creativity and commercial success—making scale profitable and sustainable.</p>
+                        <h3>Our Mission</h3>
+                        <p>To empower garment businesses with expert guidance, industry best practices, and tailored strategies that bridge the gap between creativity and commercial success.</p>
                     </div>
                 </div>
             </div>
@@ -875,79 +678,56 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p>Comprehensive solutions designed to address every stage of your apparel business journey</p>
             </div>
            
             <div class="services-grid">
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Business Planning & Strategy</h3>
-                    <p style="margin-bottom: 1rem; color: var(--text); font-size: 0.95rem;">Develop winning strategies tailored to your market position and growth goals.</p>
                     <ul>
-                        <li>Market research & competitive analysis</li>
-                        <li>5-year growth roadmaps & feasibility studies</li>
-                        <li>Brand positioning & market differentiation</li>
-                        <li>Business model optimization</li>
+                        <li>Market analysis</li>
+                        <li>Feasibility studies</li>
+                        <li>Brand positioning</li>
                     </ul>
                 </div>
                
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-tshirt"></i></div>
                     <h3>Product Development</h3>
-                    <p style="margin-bottom: 1rem; color: var(--text); font-size: 0.95rem;">From concept to production-ready collections with our expert guidance.</p>
                     <ul>
-                        <li>Tech pack creation & design refinement</li>
-                        <li>Vendor & fabric sourcing support</li>
-                        <li>Sampling & quality assurance</li>
-                        <li>Factory selection & negotiation</li>
+                        <li>Tech pack creation</li>
+                        <li>Sourcing & sampling support</li>
+                        <li>Vendor/factory connection</li>
                     </ul>
                 </div>
                
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-cogs"></i></div>
                     <h3>Production Consultancy</h3>
-                    <p style="margin-bottom: 1rem; color: var(--text); font-size: 0.95rem;">Optimize production for quality, efficiency, and profitability at scale.</p>
                     <ul>
-                        <li>Workflow optimization & lean manufacturing</li>
-                        <li>Quality control systems & inspection protocols</li>
-                        <li>Cost management & costing accuracy</li>
-                        <li>Supply chain efficiency</li>
+                        <li>Workflow optimization</li>
+                        <li>Quality control systems</li>
+                        <li>Cost management</li>
                     </ul>
                 </div>
                
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
                     <h3>Branding & Marketing</h3>
-                    <p style="margin-bottom: 1rem; color: var(--text); font-size: 0.95rem;">Build a powerful brand presence and drive customer acquisition.</p>
                     <ul>
-                        <li>Brand identity & visual strategy</li>
-                        <li>Digital marketing & social media planning</li>
-                        <li>E-commerce & D2C setup guidance</li>
-                        <li>Customer acquisition strategies</li>
+                        <li>Brand identity creation</li>
+                        <li>Digital marketing plans</li>
+                        <li>E-commerce setup guidance</li>
                     </ul>
                 </div>
                
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-store"></i></div>
                     <h3>Sales & Distribution</h3>
-                    <p style="margin-bottom: 1rem; color: var(--text); font-size: 0.95rem;">Expand market reach through strategic channel development and partnerships.</p>
                     <ul>
-                        <li>B2B & B2C channel strategy</li>
-                        <li>Retail partnership & placement</li>
-                        <li>Sales team training & enablement</li>
-                        <li>Wholesale & distribution network building</li>
-                    </ul>
-                </div>
-
-                <div class="service-card animate">
-                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Workshops & Training</h3>
-                    <p style="margin-bottom: 1rem; color: var(--text); font-size: 0.95rem;">Build internal capabilities through targeted training programs.</p>
-                    <ul>
-                        <li>Team capability building workshops</li>
-                        <li>Industry best practices training</li>
-                        <li>Quality & compliance workshops</li>
-                        <li>Digital & e-commerce training</li>
+                        <li>B2B & B2C strategy</li>
+                        <li>Retail/channel planning</li>
+                        <li>Sales training</li>
                     </ul>
                 </div>
             </div>
@@ -958,51 +738,38 @@
     <section id="why-us">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose ASAP?</h2>
-                <p>Proven expertise, strategic partnerships, and a track record of delivering results</p>
+                <h2>Why Choose Us?</h2>
             </div>
            
             <div class="features-grid">
                 <div class="feature-item animate">
                     <div class="feature-icon"><i class="fas fa-brain"></i></div>
-                    <h4>Industry Expertise</h4>
-                    <p>15+ years of hands-on experience in garment manufacturing, production, and scaling</p>
+                    <h4>Deep Industry Knowledge</h4>
+                    <p>From field experience</p>
                 </div>
                
                 <div class="feature-item animate">
                     <div class="feature-icon"><i class="fas fa-handshake"></i></div>
-                    <h4>Trusted Network</h4>
-                    <p>Access to verified vendors, manufacturers, and industry tools built over years</p>
+                    <h4>Reliable Network</h4>
+                    <p>Vendors, manufacturers & tools</p>
                 </div>
                
                 <div class="feature-item animate">
                     <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
                     <h4>Actionable Plans</h4>
-                    <p>Strategic roadmaps with measurable milestones and clear implementation steps</p>
+                    <p>Not just theory</p>
                 </div>
                
                 <div class="feature-item animate">
                     <div class="feature-icon"><i class="fas fa-users"></i></div>
                     <h4>Expert Team</h4>
-                    <p>Designers, merchandisers, marketers, and production specialists—all in-house</p>
-                </div>
-
-                <div class="feature-item animate">
-                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
-                    <h4>Proven Results</h4>
-                    <p>50+ brands transformed—average 3x revenue growth in 18 months</p>
-                </div>
-
-                <div class="feature-item animate">
-                    <div class="feature-icon"><i class="fas fa-target"></i></div>
-                    <h4>Your Success</h4>
-                    <p>We succeed only when you do—aligned incentives and long-term partnership</p>
+                    <p>Designers, merchandisers, marketers</p>
                 </div>
             </div>
            
-            <div class="why-us-bottom animate">
-                <p style="margin-bottom: 1.2rem;"><strong><i class="fas fa-target" style="margin-right: 0.8rem;"></i>Who We Serve:</strong> Fashion designers, startup founders, boutique manufacturers, export houses, e-commerce brands, textile investors, and D2C brands seeking rapid, sustainable growth.</p>
-                <p><strong><i class="fas fa-briefcase" style="margin-right: 0.8rem;"></i>How We Work:</strong> Monthly/quarterly retainers, project-based engagements, strategic workshops, full-service partnerships, and advisory retainers tailored to your needs.</p>
+            <div style="margin-top: 4rem; text-align: center;">
+                <p><strong>Target Clients:</strong> Fashion designers, startup founders, boutique manufacturers, export houses, e-commerce brands, textile investors.</p>
+                <p style="margin-top: 1rem;"><strong>Business Model:</strong> Monthly/quarterly packages, project-based, workshops, retainers.</p>
             </div>
         </div>
     </section>
@@ -1011,40 +778,38 @@
     <section id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Ready to Scale?</h2>
-                <p>Let's discuss your apparel business goals and chart a path to profitability</p>
+                <h2>Get In Touch</h2>
             </div>
            
             <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Details</h3>
+                <div>
+                    <h3 style="color: white; text-transform: uppercase;">CONTACT INFORMATION</h3>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span><strong>Phone</strong><br>+91 99253 11901</span>
+                        <span>+91 99253 11901</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span><strong>Email</strong><br>info@asapgp.com<br>arpana@asapgp.com</span>
+                        <span>info@asapgp.com</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span><strong>Location</strong><br>Ahmedabad, India<br>Serving businesses across India & beyond</span>
+                        <span>Ahmedabad, India</span>
                     </div>
                 </div>
-
                 <div class="contact-form animate">
                     <form action="https://formspree.io/f/xyzpqrst" method="POST">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Full Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email Address" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" rows="5" placeholder="Tell us about your business & growth goals..." required></textarea>
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                        <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1060,8 +825,7 @@
 
     <!-- Footer -->
     <footer>
-        <p><strong>ASAP Growth Partners</strong> | Empowering Apparel Brands Across India</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem;">&copy; 2025 All rights reserved. Built with expertise for your success.</p>
+        <p>&copy; 2025 ASAP Growth Partners. All rights reserved. | Empowering Indian Apparel Brands</p>
     </footer>
 
     <!-- Scripts -->
