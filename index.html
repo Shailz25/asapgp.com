@@ -189,6 +189,66 @@
             border-color: var(--primary);
             color: var(--primary);
         }
+
+        .top-chip.whatsapp-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            padding-left: 0.55rem;
+            padding-right: 0.55rem;
+            color: #16a34a;
+        }
+
+        .top-chip.whatsapp-chip i {
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .top-chip.call-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            padding-left: 0.55rem;
+            padding-right: 0.55rem;
+            color: var(--primary);
+        }
+
+        .top-chip.call-chip i {
+            font-size: 0.95rem;
+            line-height: 1;
+        }
+
+        .top-chip.email-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            padding-left: 0.55rem;
+            padding-right: 0.55rem;
+            color: #2563eb;
+        }
+
+        .top-chip.email-chip i {
+            font-size: 0.95rem;
+            line-height: 1;
+        }
+
+        .top-chip.quick-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .top-chip.quick-chip i {
+            font-size: 0.92rem;
+            line-height: 1;
+        }
+
+        .top-chip.quick-chip .chip-label {
+            line-height: 1;
+        }
        
         .nav-container {
             max-width: 1200px;
@@ -853,6 +913,17 @@
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
+
+            .top-chip.quick-chip {
+                min-width: 38px;
+                justify-content: center;
+                padding-left: 0.55rem;
+                padding-right: 0.55rem;
+            }
+
+            .top-chip.quick-chip .chip-label {
+                display: none;
+            }
         }
 
         /* Thank You Message Style */
@@ -889,9 +960,30 @@
     <nav>
         <div class="top-strip">
             <div class="container">
-                <a class="top-chip" href="tel:+919925311901">+91 99253 11901</a>
-                <a class="top-chip" href="mailto:info@asapgp.com">info@asapgp.com</a>
-                <a class="top-chip" href="#contact">Quick Contact</a>
+                <a
+                    class="top-chip call-chip"
+                    href="tel:+919925311901"
+                    aria-label="Call +91 99253 11901"
+                    title="Call +91 99253 11901"
+                ><i class="fas fa-phone" aria-hidden="true"></i></a>
+                <a
+                    class="top-chip email-chip"
+                    href="mailto:info@asapgp.com?subject=Consultancy%20Enquiry%20from%20Website&body=Hi%20ASAP%20Growth%20Partners%2C%0D%0A%0D%0AI%20want%20consultancy%20support%20for%20my%20apparel%20business.%0D%0A%0D%0AName%3A%20%0D%0ACompany%3A%20%0D%0APhone%3A%20%0D%0AService%20Needed%3A%20%0D%0A%0D%0AThanks."
+                    aria-label="Send email to ASAP Growth Partners"
+                    title="Send email"
+                ><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                <a
+                    class="top-chip whatsapp-chip"
+                    href="https://wa.me/919925311901?text=Hi%20ASAP%20Growth%20Partners%2C%20I%20want%20consultancy%20support%20for%20my%20apparel%20business."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat on WhatsApp"
+                    title="Chat on WhatsApp"
+                ><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                <a class="top-chip quick-chip" href="#contact" aria-label="Quick Contact" title="Quick Contact">
+                    <i class="fas fa-comments" aria-hidden="true"></i>
+                    <span class="chip-label">Quick Contact</span>
+                </a>
             </div>
         </div>
         <div class="nav-container">
