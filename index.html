@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASAP Growth Partners - Apparel Success Acceleration Program</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
    
@@ -64,15 +66,28 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            color: #1f2937;
+            color: #111827;
             text-shadow: none;
+            letter-spacing: -0.01em;
         }
        
         .hero .tagline {
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
-            font-weight: 300;
-            color: #6b7280;
+            font-weight: 400;
+            color: #374151;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-description {
+            margin-bottom: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #374151;
+            font-size: 1.08rem;
         }
         .hero-grid {
             display: grid;
@@ -134,15 +149,45 @@
        
         /* Navigation */
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0;
             transition: all 0.3s ease;
             border-bottom: 1px solid #e5e7eb;
+        }
+
+        .top-strip {
+            border-bottom: 1px solid #eceff3;
+            background: #f8fafc;
+        }
+
+        .top-strip .container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            padding-top: 0.55rem;
+            padding-bottom: 0.55rem;
+        }
+
+        .top-chip {
+            font-size: 0.85rem;
+            color: #1f2937;
+            border: 1px solid #d1d5db;
+            padding: 0.3rem 0.75rem;
+            border-radius: 999px;
+            text-decoration: none;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .top-chip:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
        
         .nav-container {
@@ -152,26 +197,43 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 2rem;
+            min-height: 76px;
         }
        
         .logo {
-            color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: 700;
             text-decoration: none;
-            margin-left: 56px;
+            margin-left: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .logo span {
+            color: var(--primary);
+            font-size: 1.9rem;
+            font-weight: 700;
+            line-height: 1;
         }
        
         .nav-links {
-            display: none;
-            gap: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
         }
        
         .nav-links a {
-            color: white;
+            color: #1f2937;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 0.98rem;
         }
        
         .nav-links a:hover {
@@ -182,17 +244,15 @@
         .hamburger {
             width: 44px;
             height: 36px;
-            display: inline-flex;
+            display: none;
             flex-direction: column;
             justify-content: center;
             gap: 4px;
             background: transparent;
             border: none;
             cursor: pointer;
-            position: fixed;
-            left: 16px;
-            top: 12px;
-            z-index: 1601;
+            position: relative;
+            z-index: 1001;
             padding: 6px;
             background: rgba(220, 38, 38, 0.08);
             border-radius: 8px;
@@ -238,6 +298,19 @@
         }
         .sidebar nav {
             padding-top: 48px;
+        }
+
+        .sidebar-brand {
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-top: 1.6rem;
+        }
+
+        .sidebar-brand img {
+            width: 130px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
         }
         .sidebar a {
             display: block;
@@ -404,6 +477,113 @@
             text-align: center;
             padding: 2rem;
         }
+
+        .focus-areas {
+            padding: 0;
+            background: #f8fafc;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .focus-card {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-right: 1px solid #e5e7eb;
+            background: #f3f4f6;
+            transition: all 0.25s ease;
+        }
+
+        .focus-card:nth-child(2n) {
+            background: #eef2f7;
+        }
+
+        .focus-card:last-child {
+            border-right: none;
+        }
+
+        .focus-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .focus-card p {
+            color: #4b5563;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .focus-card:hover {
+            background: #eaf0f6;
+        }
+
+        .focus-cta {
+            text-align: center;
+            padding: 1rem 0 1.6rem;
+        }
+
+        .mini-stats {
+            padding: 36px 0;
+            background: #ffffff;
+        }
+
+        .mini-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .mini-stat {
+            text-align: center;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1rem;
+            background: #fff;
+        }
+
+        .mini-stat h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .mini-stat p {
+            margin: 0;
+            color: #4b5563;
+            font-size: 0.92rem;
+        }
+
+        .business-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .business-info-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+            text-align: left;
+        }
+
+        .business-info-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .business-info-card p {
+            color: #4b5563;
+            margin: 0;
+        }
        
         .feature-icon {
             font-size: 3rem;
@@ -534,6 +714,28 @@
             padding: 2rem 0;
             font-size: 0.9rem;
         }
+
+        .footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-brand img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 2px;
+        }
+
+        .footer-brand span {
+            color: #f3f4f6;
+            font-size: 1rem;
+            font-weight: 600;
+        }
        
         /* Animations */
         @keyframes fadeInUp {
@@ -559,6 +761,54 @@
         }
        
         /* Mobile */
+        @media (max-width: 991px) {
+            .top-strip {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-container {
+                min-height: 70px;
+            }
+
+            .logo {
+                margin-left: 0.6rem;
+            }
+
+            .hamburger {
+                display: inline-flex;
+            }
+
+            .logo img {
+                width: 38px;
+                height: 38px;
+            }
+
+            .logo span {
+                font-size: 1.45rem;
+            }
+
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .focus-card {
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+            }
+
+            .focus-card:last-child {
+                border-bottom: none;
+            }
+
+            .mini-stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.8rem;
@@ -579,9 +829,14 @@
             .contact-content {
                 grid-template-columns: 1fr;
             }
+
+            .business-info-grid {
+                grid-template-columns: 1fr;
+            }
            
-            .hamburger {
-                display: inline-flex;
+            .mini-stats-grid,
+            .business-info-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -617,8 +872,18 @@
 </head>
 <body>
     <nav>
+        <div class="top-strip">
+            <div class="container">
+                <a class="top-chip" href="tel:+919925311901">+91 99253 11901</a>
+                <a class="top-chip" href="mailto:info@asapgp.com">info@asapgp.com</a>
+                <a class="top-chip" href="#contact">Quick Contact</a>
+            </div>
+        </div>
         <div class="nav-container">
-            <a href="#" class="logo">ASAP Growth Partners</a>
+            <a href="#" class="logo">
+                <img src="assets/logo-mark-red.png" alt="ASAP Growth Partners logo">
+                <span>ASAP Growth Partners</span>
+            </a>
             <div>
                 <button class="hamburger" id="menu-btn" aria-label="Open menu" aria-expanded="false">
                     <span></span>
@@ -630,6 +895,7 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
+                <a href="#focus-areas">Focus Areas</a>
                 <a href="#why-us">Why Us</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -637,10 +903,14 @@
     </nav>
     <!-- Sidebar (hidden by default) -->
     <aside class="sidebar" id="sidebar" aria-hidden="true">
+        <div class="sidebar-brand">
+            <img src="assets/logo-red-white.png" alt="ASAP Growth Partners">
+        </div>
         <button class="close-btn" id="close-btn" aria-label="Close menu">← Back</button>
         <nav class="sidebar-nav">
             <a href="#about" class="sidebar-link">About</a>
             <a href="#services" class="sidebar-link">Services</a>
+            <a href="#focus-areas" class="sidebar-link">Focus Areas</a>
             <a href="#why-us" class="sidebar-link">Why Us</a>
             <a href="#contact" class="sidebar-link">Contact</a>
         </nav>
@@ -651,9 +921,9 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Scale Your Apparel Brand with Expert Guidance</h1>
-            <p class="tagline">From Design to Distribution - We Build Profitable, Scalable Apparel Businesses</p>
-            <p style="margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; color: #1f2937;">
-                ASAP Growth Partners partners with designers, startups, and manufacturers to solve production challenges, strengthen brands, and accelerate profitable growth in the competitive Indian apparel market.
+            <p class="tagline">From idea to execution, we help apparel brands scale profitably.</p>
+            <p class="hero-description">
+                We partner with designers, startups, and manufacturers to improve operations, strengthen market positioning, and accelerate sustainable growth.
             </p>
             <a href="#contact" class="cta-btn">Start Your Growth Program</a>
             <div class="hero-grid">
@@ -676,6 +946,30 @@
         </div>
     </section>
 
+    <section id="focus-areas" class="focus-areas">
+        <div class="focus-grid">
+            <article class="focus-card">
+                <h3>DESIGN & DEVELOPMENT</h3>
+                <p>Translate ideas into market-ready products with structured tech packs and sampling support.</p>
+            </article>
+            <article class="focus-card">
+                <h3>PRODUCTION SETUP</h3>
+                <p>Build reliable sourcing and factory workflows to improve quality, speed, and consistency.</p>
+            </article>
+            <article class="focus-card">
+                <h3>BRAND & GO-TO-MARKET</h3>
+                <p>Define positioning and launch strategy to reach the right customers with confidence.</p>
+            </article>
+            <article class="focus-card">
+                <h3>SCALE & DISTRIBUTION</h3>
+                <p>Expand through B2B/B2C channel planning, sales systems, and operational guidance.</p>
+            </article>
+        </div>
+        <div class="focus-cta">
+            <a href="#services" class="cta-btn">Explore Services</a>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about">
         <div class="container">
@@ -689,7 +983,7 @@
                         ASAP Growth Partners is a specialized <strong>Garment Business Consultancy</strong> dedicated to helping apparel entrepreneurs, fashion startups, and small-to-medium manufacturers succeed in a competitive market.
                     </p>
                     <p class="animate" style="margin-top: 1.5rem;">
-                        We offer <strong>end-to-end services</strong>—from concept development and production planning to branding, marketing, and scaling strategies.
+                        We offer <strong>end-to-end services</strong>—from concept development and production planning to branding, marketing, sustainability advisory, and scaling strategies.
                     </p>
                 </div>
                
@@ -703,6 +997,29 @@
                         <h3>Our Mission</h3>
                         <p>To empower garment businesses with expert guidance, industry best practices, and tailored strategies that bridge the gap between creativity and commercial success.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mini-stats">
+        <div class="container">
+            <div class="mini-stats-grid">
+                <div class="mini-stat">
+                    <h3>6</h3>
+                    <p>Service Domains</p>
+                </div>
+                <div class="mini-stat">
+                    <h3>5</h3>
+                    <p>Target Client Profiles</p>
+                </div>
+                <div class="mini-stat">
+                    <h3>2</h3>
+                    <p>Engagement Models (Project & Retainer)</p>
+                </div>
+                <div class="mini-stat">
+                    <h3>1</h3>
+                    <p>End-to-End Growth Partner</p>
                 </div>
             </div>
         </div>
@@ -765,6 +1082,16 @@
                         <li>Sales training</li>
                     </ul>
                 </div>
+
+                <div class="service-card animate">
+                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Sustainability Advisory</h3>
+                    <ul>
+                        <li>Eco-friendly sourcing</li>
+                        <li>Certifications & compliance</li>
+                        <li>Sustainable process guidance</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -792,7 +1119,7 @@
                 <div class="feature-item animate">
                     <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
                     <h4>Actionable Plans</h4>
-                    <p>Not just theory</p>
+                    <p>Practical, actionable plans—not just theory</p>
                 </div>
                
                 <div class="feature-item animate">
@@ -802,9 +1129,15 @@
                 </div>
             </div>
            
-            <div style="margin-top: 4rem; text-align: center;">
-                <p><strong>Target Clients:</strong> Fashion designers, startup founders, boutique manufacturers, export houses, e-commerce brands, textile investors.</p>
-                <p style="margin-top: 1rem;"><strong>Business Model:</strong> Monthly/quarterly packages, project-based, workshops, retainers.</p>
+            <div class="business-info-grid">
+                <div class="business-info-card animate">
+                    <h4>Target Clients</h4>
+                    <p>Fashion designers, startup founders, boutique manufacturers, export houses, e-commerce brands, textile investors.</p>
+                </div>
+                <div class="business-info-card animate">
+                    <h4>Business Model</h4>
+                    <p>Monthly/quarterly packages, project-based services, workshops, and retainers.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -868,6 +1201,10 @@
 
     <!-- Footer -->
     <footer>
+        <div class="footer-brand">
+            <img src="assets/logo-mark-red.png" alt="ASAP Growth Partners">
+            <span>ASAP Growth Partners</span>
+        </div>
         <p>&copy; 2025 ASAP Growth Partners. All rights reserved. | Empowering Indian Apparel Brands</p>
     </footer>
 
