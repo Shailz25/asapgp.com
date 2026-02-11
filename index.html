@@ -160,94 +160,63 @@
             border-bottom: 1px solid #e5e7eb;
         }
 
-        .top-strip {
-            border-bottom: 1px solid #eceff3;
-            background: #f8fafc;
-        }
-
-        .top-strip .container {
+        .quick-connect-drawer {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1300;
             display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 0.75rem;
-            padding-top: 0.55rem;
-            padding-bottom: 0.55rem;
+            flex-direction: column;
+            gap: 0.55rem;
+            padding: 0.45rem;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.32);
+            border: 1px solid rgba(229, 231, 235, 0.75);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
         }
 
-        .top-chip {
-            font-size: 0.85rem;
-            color: #1f2937;
-            border: 1px solid #d1d5db;
-            padding: 0.3rem 0.75rem;
-            border-radius: 999px;
-            text-decoration: none;
-            background: #ffffff;
-            transition: all 0.2s ease;
-        }
-
-        .top-chip:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .top-chip.whatsapp-chip {
+        .quick-connect-link {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 1px solid rgba(209, 213, 219, 0.9);
+            background: rgba(255, 255, 255, 0.9);
+            color: #374151;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-width: 38px;
-            padding-left: 0.55rem;
-            padding-right: 0.55rem;
-            color: #16a34a;
+            text-decoration: none;
+            transition: all 0.2s ease;
         }
 
-        .top-chip.whatsapp-chip i {
+        .quick-connect-link i {
             font-size: 1rem;
             line-height: 1;
         }
 
-        .top-chip.call-chip {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 38px;
-            padding-left: 0.55rem;
-            padding-right: 0.55rem;
+        .quick-connect-link:hover {
+            transform: translateY(-1px);
+            border-color: var(--primary);
+            color: var(--primary);
+            background: #ffffff;
+        }
+
+        .quick-connect-link.phone-link {
             color: var(--primary);
         }
 
-        .top-chip.call-chip i {
-            font-size: 0.95rem;
-            line-height: 1;
-        }
-
-        .top-chip.email-chip {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 38px;
-            padding-left: 0.55rem;
-            padding-right: 0.55rem;
+        .quick-connect-link.email-link {
             color: #2563eb;
         }
 
-        .top-chip.email-chip i {
-            font-size: 0.95rem;
-            line-height: 1;
+        .quick-connect-link.whatsapp-link {
+            color: #16a34a;
         }
 
-        .top-chip.quick-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .top-chip.quick-chip i {
-            font-size: 0.92rem;
-            line-height: 1;
-        }
-
-        .top-chip.quick-chip .chip-label {
-            line-height: 1;
+        .quick-connect-link.message-link {
+            color: #0f172a;
         }
        
         .nav-container {
@@ -822,19 +791,6 @@
        
         /* Mobile */
         @media (max-width: 991px) {
-            .top-strip .container {
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 0.45rem;
-                padding-top: 0.45rem;
-                padding-bottom: 0.45rem;
-            }
-
-            .top-chip {
-                font-size: 0.78rem;
-                padding: 0.25rem 0.6rem;
-            }
-
             .nav-links {
                 display: none;
             }
@@ -876,6 +832,17 @@
             .mini-stats-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
+
+            .quick-connect-drawer {
+                left: 8px;
+                padding: 0.4rem;
+                gap: 0.5rem;
+            }
+
+            .quick-connect-link {
+                width: 40px;
+                height: 40px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -908,21 +875,17 @@
                 grid-template-columns: 1fr;
             }
 
-            .top-strip .container {
-                justify-content: flex-start;
-                padding-left: 1rem;
-                padding-right: 1rem;
+            .quick-connect-drawer {
+                left: 6px;
             }
 
-            .top-chip.quick-chip {
-                min-width: 38px;
-                justify-content: center;
-                padding-left: 0.55rem;
-                padding-right: 0.55rem;
+            .quick-connect-link {
+                width: 42px;
+                height: 42px;
             }
 
-            .top-chip.quick-chip .chip-label {
-                display: none;
+            .quick-connect-link i {
+                font-size: 1.1rem;
             }
         }
 
@@ -957,35 +920,36 @@
     </style>
 </head>
 <body>
+    <div class="quick-connect-drawer" aria-label="Quick connect actions">
+        <a
+            class="quick-connect-link phone-link"
+            href="tel:+919925311901"
+            aria-label="Call +91 99253 11901"
+            title="Call"
+        ><i class="fas fa-phone" aria-hidden="true"></i></a>
+        <a
+            class="quick-connect-link email-link"
+            href="mailto:info@asapgp.com?subject=Consultancy%20Enquiry%20from%20Website&body=Hi%20ASAP%20Growth%20Partners%2C%0D%0A%0D%0AI%20want%20consultancy%20support%20for%20my%20apparel%20business.%0D%0A%0D%0AName%3A%20%0D%0ACompany%3A%20%0D%0APhone%3A%20%0D%0AService%20Needed%3A%20%0D%0A%0D%0AThanks."
+            aria-label="Send email"
+            title="Email"
+        ><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a
+            class="quick-connect-link whatsapp-link"
+            href="https://wa.me/919925311901?text=Hi%20ASAP%20Growth%20Partners%2C%20I%20want%20consultancy%20support%20for%20my%20apparel%20business."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp"
+            title="WhatsApp"
+        ><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a
+            class="quick-connect-link message-link"
+            href="#contact"
+            aria-label="Quick contact form"
+            title="Quick Contact"
+        ><i class="fas fa-comments" aria-hidden="true"></i></a>
+    </div>
+
     <nav>
-        <div class="top-strip">
-            <div class="container">
-                <a
-                    class="top-chip call-chip"
-                    href="tel:+919925311901"
-                    aria-label="Call +91 99253 11901"
-                    title="Call +91 99253 11901"
-                ><i class="fas fa-phone" aria-hidden="true"></i></a>
-                <a
-                    class="top-chip email-chip"
-                    href="mailto:info@asapgp.com?subject=Consultancy%20Enquiry%20from%20Website&body=Hi%20ASAP%20Growth%20Partners%2C%0D%0A%0D%0AI%20want%20consultancy%20support%20for%20my%20apparel%20business.%0D%0A%0D%0AName%3A%20%0D%0ACompany%3A%20%0D%0APhone%3A%20%0D%0AService%20Needed%3A%20%0D%0A%0D%0AThanks."
-                    aria-label="Send email to ASAP Growth Partners"
-                    title="Send email"
-                ><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                <a
-                    class="top-chip whatsapp-chip"
-                    href="https://wa.me/919925311901?text=Hi%20ASAP%20Growth%20Partners%2C%20I%20want%20consultancy%20support%20for%20my%20apparel%20business."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Chat on WhatsApp"
-                    title="Chat on WhatsApp"
-                ><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                <a class="top-chip quick-chip" href="#contact" aria-label="Quick Contact" title="Quick Contact">
-                    <i class="fas fa-comments" aria-hidden="true"></i>
-                    <span class="chip-label">Quick Contact</span>
-                </a>
-            </div>
-        </div>
         <div class="nav-container">
             <a href="#" class="logo">
                 <img src="assets/logo-mark-red.png" alt="ASAP Growth Partners logo">
